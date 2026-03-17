@@ -60,16 +60,16 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
   if (!isOpen) return null;
   
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white dark:bg-gray-900 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+      <div className="bg-black rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto" style={{border: '1px solid rgba(245, 245, 245, 0.2)'}}>
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold text-white">
               Hire Me
             </h2>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+              className="p-2 hover:bg-white/10 rounded-lg transition-colors"
             >
               <X size={24} />
             </button>
@@ -77,13 +77,13 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
           
           {submitStatus === 'success' ? (
             <div className="text-center py-12">
-              <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Send className="text-green-600 dark:text-green-400" size={32} />
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{border: '2px solid rgb(251, 191, 36)'}}>
+                <Send className="text-amber-200" size={32} />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-xl font-semibold text-white mb-2">
                 Message Sent Successfully!
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-400">
                 I'll get back to you within 24 hours.
               </p>
             </div>
@@ -91,7 +91,7 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Full Name *
                   </label>
                   <input
@@ -99,12 +99,13 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 bg-black text-white rounded-lg focus:ring-2 focus:ring-amber-200 focus:border-transparent"
+                    style={{border: '1px solid rgba(245, 245, 245, 0.2)'}}
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Email Address *
                   </label>
                   <input
@@ -112,32 +113,35 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 bg-black text-white rounded-lg focus:ring-2 focus:ring-amber-200 focus:border-transparent"
+                    style={{border: '1px solid rgba(245, 245, 245, 0.2)'}}
                   />
                 </div>
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Company
                 </label>
                 <input
                   type="text"
                   value={formData.company}
                   onChange={(e) => setFormData({...formData, company: e.target.value})}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-black text-white rounded-lg focus:ring-2 focus:ring-amber-200 focus:border-transparent"
+                  style={{border: '1px solid rgba(245, 245, 245, 0.2)'}}
                 />
               </div>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Project Type
                   </label>
                   <select
                     value={formData.projectType}
                     onChange={(e) => setFormData({...formData, projectType: e.target.value})}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 bg-black text-white rounded-lg focus:ring-2 focus:ring-amber-200 focus:border-transparent"
+                    style={{border: '1px solid rgba(245, 245, 245, 0.2)'}}
                   >
                     <option value="">Select type</option>
                     <option value="web">Web Development</option>
@@ -149,13 +153,14 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Budget Range
                   </label>
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({...formData, budget: e.target.value})}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 bg-black text-white rounded-lg focus:ring-2 focus:ring-amber-200 focus:border-transparent"
+                    style={{border: '1px solid rgba(245, 245, 245, 0.2)'}}
                   >
                     <option value="">Select budget</option>
                     <option value="1k-5k">$1,000 - $5,000</option>
@@ -167,13 +172,14 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Timeline
                 </label>
                 <select
                   value={formData.timeline}
                   onChange={(e) => setFormData({...formData, timeline: e.target.value})}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-black text-white rounded-lg focus:ring-2 focus:ring-amber-200 focus:border-transparent"
+                  style={{border: '1px solid rgba(245, 245, 245, 0.2)'}}
                 >
                   <option value="">Select timeline</option>
                   <option value="urgent">Urgent (1-2 weeks)</option>
@@ -185,7 +191,7 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Project Description *
                 </label>
                 <textarea
@@ -193,7 +199,8 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                   rows={4}
                   value={formData.description}
                   onChange={(e) => setFormData({...formData, description: e.target.value})}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-black text-white rounded-lg focus:ring-2 focus:ring-amber-200 focus:border-transparent"
+                  style={{border: '1px solid rgba(245, 245, 245, 0.2)'}}
                   placeholder="Describe your project requirements, goals, and any specific technologies needed..."
                 />
               </div>
@@ -202,11 +209,11 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="flex-1 bg-white hover:bg-gray-200 text-black font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
                       Sending...
                     </>
                   ) : (
@@ -220,14 +227,15 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                  className="px-6 py-3 rounded-lg hover:bg-white/10 transition-colors"
+                  style={{border: '1px solid rgba(245, 245, 245, 0.2)'}}
                 >
                   Cancel
                 </button>
               </div>
               
               {submitStatus === 'error' && (
-                <div className="mt-4 p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 rounded-lg">
+                <div className="mt-4 p-3 bg-red-900/30 text-red-300 rounded-lg" style={{border: '1px solid rgb(239, 68, 68)'}}>
                   Failed to send message. Please try again or email directly to deoniyogisubizo@gmail.com
                 </div>
               )}
