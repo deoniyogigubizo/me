@@ -16,7 +16,7 @@ export default function About() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 className="text-2xl font-semibold mb-6 text-amber-200">Who I Am</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-amber-200">I'm Deogratias Niyogisubizo</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
               I'm a full-stack developer with expertise in modern web technologies.
               I enjoy turning complex problems into simple, beautiful designs and

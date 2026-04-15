@@ -5,35 +5,35 @@ import { Quote, Star } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "CEO, TechStart Africa",
+    name: "Jean Claude Munyaneza",
+    role: "CEO, Kigali Tech Solutions",
     content: "Deo delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and ability to translate our requirements into a beautiful, functional solution was impressive.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "CTO, InnovateLabs",
+    name: "Olivier Mugisha",
+    role: "CTO, Smart Home Rwanda",
     content: "Working with Deo on our IoT smart home project was a pleasure. His expertise in embedded systems combined with modern web technologies created a seamless experience.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop"
   },
   {
     id: 3,
-    name: "Amara Nkrumah",
+    name: "Divine Umutoni",
     role: "Director, Kigali Digital Hub",
     content: "Deo's work on our healthcare portal transformed how we deliver telemedicine services. His professionalism and technical skills are top-notch.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop"
+    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&h=100&fit=crop"
   },
   {
     id: 4,
-    name: "David Okonkwo",
-    role: "Founder, RestaurantPOS",
+    name: "Patrick Habimana",
+    role: "Founder, RestaurantPOS Rwanda",
     content: "The restaurant management system Deo built for us handles complex operations smoothly. His understanding of both business logic and user experience made all the difference.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+    image: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=100&h=100&fit=crop"
   }
 ];
 

@@ -27,10 +27,6 @@
 
   html {
     scroll-behavior: smooth;
-    transform: scale(0.9);
-    transform-origin: top center;
-    width: 111.11%;
-    margin-left: -5.56%;
   }
   
   body {
@@ -159,6 +155,21 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
 }
 
 .animate-pulse-glow {

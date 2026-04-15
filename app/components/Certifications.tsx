@@ -1,66 +1,96 @@
 'use client';
-import { Award, CheckCircle, Calendar, ExternalLink, Cloud, Code, Container, Smartphone, Server } from 'lucide-react';
+import { Award, CheckCircle, Calendar, ExternalLink, Cpu, Code, Brain, Database, Globe, Smartphone } from 'lucide-react';
 
 const certifications = [
   {
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
+    title: "Python Programming Certificate",
+    issuer: "TutorialsPoint",
     date: "2024",
-    credentialId: "AWS-SAA-2024-1234",
-    url: "https://aws.amazon.com/certification",
-    color: "border-l-amber-200",
-    icon: <Cloud size={28} />,
-    iconBg: "from-orange-400/20 to-yellow-500/20"
-  },
-  {
-    title: "Meta Full Stack Developer Certificate",
-    issuer: "Meta (Facebook)",
-    date: "2023",
-    credentialId: "META-FS-2023-5678",
-    url: "https://www.coursera.org/professional-certificates/meta-full-stack-developer",
-    color: "border-l-blue-400",
-    icon: <Code size={28} />,
-    iconBg: "from-blue-400/20 to-blue-600/20"
-  },
-  {
-    title: "Google Cloud Professional Developer",
-    issuer: "Google Cloud",
-    date: "2023",
-    credentialId: "GCP-PD-2023-9012",
-    url: "https://cloud.google.com/certification",
+    credentialId: "TPP-PY-2024-001",
+    url: "#",
     color: "border-l-green-400",
-    icon: <Cloud size={28} />,
+    icon: <Code size={28} />,
     iconBg: "from-green-400/20 to-green-600/20"
   },
   {
-    title: "Meta React Native Developer Certificate",
-    issuer: "Meta (Facebook)",
+    title: "Next.js Full Stack Development",
+    issuer: "TutorialsPoint",
+    date: "2024",
+    credentialId: "TPP-NX-2024-002",
+    url: "#",
+    color: "border-l-gray-300",
+    icon: <Globe size={28} />,
+    iconBg: "from-gray-400/20 to-gray-600/20"
+  },
+  {
+    title: "IoT Development Masterclass",
+    issuer: "TutorialsPoint",
     date: "2023",
-    credentialId: "META-RN-2023-3456",
-    url: "https://www.coursera.org/professional-certificates/meta-react-native-developer",
+    credentialId: "TPP-IOT-2023-003",
+    url: "#",
     color: "border-l-cyan-400",
-    icon: <Smartphone size={28} />,
+    icon: <Cpu size={28} />,
     iconBg: "from-cyan-400/20 to-cyan-600/20"
   },
   {
-    title: "Certified Kubernetes Administrator (CKA)",
-    issuer: "Cloud Native Computing Foundation",
-    date: "2022",
-    credentialId: "CKA-2022-LF-7890",
-    url: "https://www.cncf.io/certification/cka",
+    title: "Embedded Systems Programming",
+    issuer: "TutorialsPoint",
+    date: "2023",
+    credentialId: "TPP-EMB-2023-004",
+    url: "#",
     color: "border-l-purple-400",
-    icon: <Container size={28} />,
+    icon: <Cpu size={28} />,
     iconBg: "from-purple-400/20 to-purple-600/20"
   },
   {
-    title: "Python Institute Certified Python Programmer",
-    issuer: "Python Institute",
-    date: "2022",
-    credentialId: "PCPP1-2022-4567",
-    url: "https://pythoninstitute.org/pcpp-certification",
-    color: "border-l-yellow-400",
-    icon: <Server size={28} />,
-    iconBg: "from-yellow-400/20 to-yellow-600/20"
+    title: "Machine Learning Fundamentals",
+    issuer: "TutorialsPoint",
+    date: "2023",
+    credentialId: "TPP-ML-2023-005",
+    url: "#",
+    color: "border-l-pink-400",
+    icon: <Brain size={28} />,
+    iconBg: "from-pink-400/20 to-pink-600/20"
+  },
+  {
+    title: "MongoDB Database Administration",
+    issuer: "TutorialsPoint",
+    date: "2023",
+    credentialId: "TPP-MDB-2023-006",
+    url: "#",
+    color: "border-l-green-500",
+    icon: <Database size={28} />,
+    iconBg: "from-green-500/20 to-green-700/20"
+  },
+  {
+    title: "React Native Mobile Development",
+    issuer: "TutorialsPoint",
+    date: "2023",
+    credentialId: "TPP-RN-2023-007",
+    url: "#",
+    color: "border-l-blue-400",
+    icon: <Smartphone size={28} />,
+    iconBg: "from-blue-400/20 to-blue-600/20"
+  },
+  {
+    title: "TypeScript for Professionals",
+    issuer: "TutorialsPoint",
+    date: "2024",
+    credentialId: "TPP-TS-2024-008",
+    url: "#",
+    color: "border-l-blue-500",
+    icon: <Code size={28} />,
+    iconBg: "from-blue-500/20 to-blue-700/20"
+  },
+  {
+    title: "Node.js Backend Development",
+    issuer: "TutorialsPoint",
+    date: "2023",
+    credentialId: "TPP-NJ-2023-009",
+    url: "#",
+    color: "border-l-green-600",
+    icon: <Code size={28} />,
+    iconBg: "from-green-600/20 to-green-800/20"
   }
 ];
 
@@ -73,7 +103,7 @@ export default function Certifications() {
             Certifications & <span className="gradient-text">Credentials</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Professional certifications that validate my expertise across various technologies and platforms.
+            Professional certifications from TutorialsPoint validating expertise across various technologies.
           </p>
         </div>
 
@@ -109,7 +139,7 @@ export default function Certifications() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-amber-200 hover:text-white transition-colors text-sm"
               >
-                Verify Certificate
+                View Certificate
                 <ExternalLink size={14} />
               </a>
             </div>
@@ -123,7 +153,7 @@ export default function Certifications() {
             <div>
               <h4 className="text-lg font-semibold text-white mb-1">Continuous Learning</h4>
               <p className="text-gray-400">
-                I'm committed to staying current with the latest technologies. New certifications are regularly added as I complete them.
+                Committed to staying current with the latest technologies. New certifications are regularly added.
               </p>
             </div>
           </div>

@@ -1,21 +1,18 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { ChevronDown, Github, Instagram, Mail, MessageCircle, Download } from 'lucide-react';
+import { useState, useEffect, useMemo } from 'react';
+import { ChevronDown, Github, Instagram, Mail, Phone, Download } from 'lucide-react';
 import HireMeModal from './HireMeModal';
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+  
+  const columns = 50;
+  const rows = 30;
+  
+  const binaryMatrix = useMemo(() => {
+    return Array.from({ length: rows }, () => 
+      Array.from({ length: columns }, () => Math.random() > 0.5 ? '1' : '0')
+    );
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -26,20 +23,33 @@ export default function Hero() {
   };
 
   return (
-    <section className="flex flex-col justify-end bg-black text-white relative overflow-hidden" style={{minHeight: '120vh'}}>
-      {/* Animated background */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgb(250, 250, 210) 0%, transparent 50%)`,
-        }}
-      />
-      
-      {/* Grid pattern */}
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: `linear-gradient(rgb(255,255,255) 1px, transparent 1px), linear-gradient(90deg, rgb(255,255,255) 1px, transparent 1px)`,
-        backgroundSize: '50px 50px',
-      }} />
+    <section className="flex flex-col justify-end bg-black text-white relative overflow-hidden" style={{minHeight: '100vh'}}>
+      {/* Binary matrix background - full screen */}
+      <div className="absolute inset-0 z-0" style={{
+        opacity: 0.15,
+        fontFamily: 'monospace',
+        fontSize: '16px',
+        lineHeight: '1',
+      }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: `repeat(${columns}, 1fr)`,
+          width: '100%',
+          height: '100%',
+        }}>
+          {binaryMatrix.map((row, rowIndex) => (
+            row.map((char, colIndex) => (
+              <span key={`${rowIndex}-${colIndex}`} style={{ 
+                color: char === '1' ? '#22c55e' : '#888888',
+                textAlign: 'center',
+                padding: '2px',
+              }}>
+                {char}
+              </span>
+            ))
+          ))}
+        </div>
+      </div>
 
       <div className="text-center px-4 relative z-10 pb-8 mb-4">
         {/* Name with gradient */}
@@ -127,12 +137,12 @@ export default function Hero() {
 
       {/* WhatsApp Button - Fixed Position */}
       <a
-        href="https://wa.me/+250792758841"
+        href="https://wa.me/+250794990264"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-40"
       >
-        <MessageCircle size={24} />
+        <Phone size={24} />
       </a>
 
       <HireMeModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

@@ -145,6 +145,55 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Developer Banner Section */}
+      <section className="py-16 px-4 bg-[#0a0a0a] text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            {/* Left side - Developer term */}
+            <div className="lg:col-span-4 text-left animate-fade-in-up">
+              <div className="text-[#22c55e] text-sm font-mono mb-2">&lt;developer&gt;</div>
+              <h3 className="text-2xl md:text-3xl font-bold text-[#f5f5dc] mb-4">
+                Building Digital<br />Experiences
+              </h3>
+              <p className="text-gray-400 mb-4 text-sm">
+                Transforming ideas into powerful, scalable solutions
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                <span className="px-2 py-1 bg-[#22c55e]/10 text-[#22c55e] text-xs font-mono rounded">Next.js</span>
+                <span className="px-2 py-1 bg-[#22c55e]/10 text-[#22c55e] text-xs font-mono rounded">React</span>
+                <span className="px-2 py-1 bg-[#22c55e]/10 text-[#22c55e] text-xs font-mono rounded">Python</span>
+              </div>
+            </div>
+
+            {/* Image - Center */}
+            <div className="lg:col-span-4 relative group animate-fade-in-up flex justify-center" style={{animationDelay: '0.2s'}}>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#22c55e]/20 via-[#22c55e]/10 to-[#22c55e]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
+              <img 
+                src="/image/me2.png" 
+                alt="Deo NIYOGISUBIZO" 
+                className="w-48 h-48 md:w-56 md:h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105 rounded-lg border-2 border-[#22c55e]/30"
+              />
+            </div>
+
+            {/* Right side - Developer term */}
+            <div className="lg:col-span-4 text-right animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="text-[#22c55e] text-sm font-mono mb-2">&lt;/developer&gt;</div>
+              <h3 className="text-2xl md:text-3xl font-bold text-[#f5f5dc] mb-4">
+                Crafting Code<br />That Works
+              </h3>
+              <p className="text-gray-400 mb-4 text-sm">
+                From concept to deployment, every line matters
+              </p>
+              <div className="flex gap-2 justify-end flex-wrap">
+                <span className="px-2 py-1 bg-[#22c55e]/10 text-[#22c55e] text-xs font-mono rounded">Node.js</span>
+                <span className="px-2 py-1 bg-[#22c55e]/10 text-[#22c55e] text-xs font-mono rounded">TypeScript</span>
+                <span className="px-2 py-1 bg-[#22c55e]/10 text-[#22c55e] text-xs font-mono rounded">AWS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-8 px-4 bg-black text-white" style={{borderTop: '1px solid rgba(245, 245, 245, 0.1)'}}>
         <div className="max-w-7xl mx-auto text-center">
